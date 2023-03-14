@@ -9,8 +9,18 @@ function header() {
             </a>
 
         <Menu>
-            
+            <a href='#'>Model S</a>
+            <a href='#'>Model 3</a>
+            <a href='#'>Model X</a>
+            <a href='#'>Model Y</a>
+            <a href='#'>Solar Roof</a>
+            <a href='#'>Solar Panels</a>
         </Menu>
+        <RightMenu>
+        <a href='#'>Shop</a>
+        <a href='#'>Account</a>
+        <a href='#'>Menu</a>
+        </RightMenu>
     </Container>
   )
 }
@@ -26,6 +36,22 @@ const Container = styled.div`
 
 `
 const Menu = styled.div`
+    display: flex;
+    align-items: center;
 
+    a {
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 0 20px;
+        flex-wrap: nowrap;
+    }
+`
 
+const RightMenu = styled.div`
+     a {
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-right: 10px;
+        flex-wrap: nowrap;
+    }
 `
