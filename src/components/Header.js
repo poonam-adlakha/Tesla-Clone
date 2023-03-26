@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { selectCars} from '../features/car/carSlice';
+import { useSelector } from 'react-redux';
 
-function header() {
+function Header() {
     const [burgerStatus, setBurgerStatus] = useState(false);
+    const cars = useSelector(selectCars);
+    console.log(cars);
   return (
     <Container>
         <a> 
@@ -12,12 +16,9 @@ function header() {
             </a>
 
         <Menu>
-            <a href='#'>Model S</a>
-            <a href='#'>Model 3</a>
-            <a href='#'>Model X</a>
-            <a href='#'>Model Y</a>
-            <a href='#'>Solar Roof</a>
-            <a href='#'>Solar Panels</a>
+            {cars && cars.map((car, index) =>(
+                <a  key={index} href='#'>{car}</a>
+            ))}
         </Menu>
         <RightMenu>
         <a href='#'>Shop</a>
@@ -48,7 +49,7 @@ function header() {
   )
 }
 
-export default header
+export default Header
 
 const Container = styled.div`
     min-height: 60px;
